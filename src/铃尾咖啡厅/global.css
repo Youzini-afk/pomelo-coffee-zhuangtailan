@@ -1,0 +1,374 @@
+/* ═══════════════════════════════════════════════════════════════
+   铃尾咖啡厅 — 全局样式
+   ═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { margin: 0; padding: 0; background: transparent; overflow-x: hidden; }
+
+/* ── Root ── */
+.cafe-root {
+  font-family: 'Noto Sans SC', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--cafe-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════════════════ FAB Floating Button ═══════════════════ */
+.cafe-fab {
+  position: fixed;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 6px;
+  background: var(--cafe-fab-bg);
+  border: none;
+  border-radius: var(--cafe-radius-full);
+  box-shadow: var(--cafe-fab-shadow);
+  cursor: grab;
+  color: var(--cafe-text-inverse);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+.cafe-fab:hover { transform: scale(1.04); }
+.cafe-fab:active { cursor: grabbing; }
+.cafe-fab--mini {
+  padding: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  font-size: 18px;
+}
+.cafe-fab__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+.cafe-fab__info { display: flex; flex-direction: column; line-height: 1.2; }
+.cafe-fab__label { font-size: 13px; font-weight: 600; }
+.cafe-fab__sub { font-size: 10px; opacity: 0.8; font-weight: 400; }
+
+/* ═══════════════════ Floating Panel ═══════════════════ */
+.cafe-floating {
+  position: fixed;
+  z-index: 9999;
+  width: min(340px, calc(100vw - 24px));
+  background: var(--cafe-bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--cafe-bg-glass-border);
+  border-radius: var(--cafe-radius);
+  box-shadow: var(--cafe-shadow-lg);
+  overflow: hidden;
+  transition: opacity 0.25s ease;
+}
+.cafe-floating.is-dragging { opacity: 0.92; cursor: grabbing; }
+
+/* ═══════════════════ Inline Panel ═══════════════════ */
+.cafe-inline {
+  width: 100%;
+  background: var(--cafe-bg);
+  border-radius: var(--cafe-radius);
+  overflow: hidden;
+}
+
+/* ═══════════════════ Panel Header ═══════════════════ */
+.cafe-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  cursor: grab;
+  user-select: none;
+}
+.cafe-header__left { display: flex; align-items: center; gap: 10px; }
+.cafe-header__title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--cafe-text);
+  letter-spacing: -0.2px;
+}
+.cafe-header__badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--cafe-radius-full);
+  background: var(--cafe-primary-soft);
+  color: var(--cafe-primary);
+}
+.cafe-header__actions { display: flex; gap: 4px; }
+
+/* ── Icon Buttons ── */
+.cafe-icon-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  border: 1px solid var(--cafe-border);
+  background: var(--cafe-bg-card);
+  color: var(--cafe-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+.cafe-icon-btn:hover { background: var(--cafe-primary-soft); color: var(--cafe-primary); border-color: var(--cafe-border-active); }
+.cafe-icon-btn svg { width: 14px; height: 14px; }
+.cafe-icon-btn--close:hover { background: rgba(228, 91, 122, 0.1); color: var(--cafe-danger); }
+
+/* ═══════════════════ Tabs ═══════════════════ */
+.cafe-tabs {
+  display: flex;
+  gap: 2px;
+  padding: 0 14px 10px;
+}
+.cafe-tab {
+  flex: 1;
+  padding: 7px 4px;
+  font-size: 12px;
+  font-weight: 600;
+  text-align: center;
+  border: none;
+  border-radius: var(--cafe-radius-sm);
+  background: var(--cafe-tab-inactive-bg);
+  color: var(--cafe-tab-inactive-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.cafe-tab--active {
+  background: var(--cafe-tab-active-bg);
+  color: var(--cafe-tab-active-text);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.cafe-tab:not(.cafe-tab--active):hover {
+  background: var(--cafe-primary-soft);
+  color: var(--cafe-text);
+}
+
+/* ═══════════════════ Panel Body ═══════════════════ */
+.cafe-body { padding: 0 14px 14px; }
+
+/* ── Section ── */
+.cafe-section { margin-bottom: 14px; }
+.cafe-section-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cafe-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+/* ── Card ── */
+.cafe-card {
+  background: var(--cafe-bg-card);
+  border: 1px solid var(--cafe-border);
+  border-radius: var(--cafe-radius-sm);
+  padding: 12px;
+  box-shadow: var(--cafe-shadow);
+}
+.cafe-card + .cafe-card { margin-top: 8px; }
+
+/* ── Stats Grid ── */
+.cafe-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.cafe-stat {
+  background: var(--cafe-bg-card);
+  border: 1px solid var(--cafe-border);
+  border-radius: var(--cafe-radius-sm);
+  padding: 10px 12px;
+  text-align: center;
+}
+.cafe-stat__label {
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--cafe-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.cafe-stat__value {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--cafe-text);
+  line-height: 1.2;
+  margin-top: 2px;
+}
+.cafe-stat__value--gold { color: var(--cafe-accent); }
+.cafe-stat__value--primary { color: var(--cafe-primary); }
+.cafe-stat__value--danger { color: var(--cafe-danger); }
+.cafe-stat__value--success { color: var(--cafe-success); }
+
+/* ── Progress Bar ── */
+.cafe-progress {
+  width: 100%;
+  height: 6px;
+  background: var(--cafe-progress-bg);
+  border-radius: var(--cafe-radius-full);
+  overflow: hidden;
+  position: relative;
+}
+.cafe-progress--sm { height: 4px; }
+.cafe-progress__fill {
+  height: 100%;
+  border-radius: var(--cafe-radius-full);
+  background: var(--cafe-primary);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 8px var(--cafe-progress-glow);
+}
+
+/* ── Pill / Badge ── */
+.cafe-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--cafe-radius-full);
+  border: 1px solid var(--cafe-border);
+  color: var(--cafe-text-secondary);
+  background: var(--cafe-bg-card);
+  white-space: nowrap;
+}
+.cafe-pill--primary { background: var(--cafe-primary-soft); color: var(--cafe-primary); border-color: var(--cafe-border-active); }
+.cafe-pill--success { color: var(--cafe-success); border-color: rgba(107,175,122,0.3); }
+.cafe-pill--danger { color: var(--cafe-danger); border-color: rgba(228,91,122,0.3); }
+
+/* ── Row / List Item ── */
+.cafe-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+.cafe-row + .cafe-row { border-top: 1px solid var(--cafe-divider); }
+.cafe-row__label { font-size: 12px; color: var(--cafe-text-secondary); }
+.cafe-row__value { font-size: 13px; font-weight: 600; color: var(--cafe-text); }
+
+/* ── Neko Card ── */
+.cafe-neko {
+  background: var(--cafe-bg-card);
+  border: 1px solid var(--cafe-border);
+  border-radius: var(--cafe-radius-sm);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+.cafe-neko:hover { border-color: var(--cafe-border-active); }
+.cafe-neko + .cafe-neko { margin-top: 6px; }
+.cafe-neko__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  cursor: pointer;
+  user-select: none;
+}
+.cafe-neko__name { font-size: 13px; font-weight: 600; color: var(--cafe-text); display: flex; align-items: center; gap: 6px; }
+.cafe-neko__meta { display: flex; align-items: center; gap: 6px; }
+.cafe-neko__energy {
+  width: 48px;
+  height: 4px;
+  background: var(--cafe-progress-bg);
+  border-radius: var(--cafe-radius-full);
+  overflow: hidden;
+}
+.cafe-neko__energy-fill { height: 100%; border-radius: var(--cafe-radius-full); transition: width 0.3s ease; }
+.cafe-neko__chevron {
+  width: 16px; height: 16px;
+  color: var(--cafe-text-muted);
+  transition: transform 0.2s ease;
+}
+.cafe-neko__chevron--open { transform: rotate(180deg); }
+.cafe-neko__detail {
+  padding: 0 12px 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.cafe-neko__detail-item { font-size: 11px; color: var(--cafe-text-secondary); }
+.cafe-neko__detail-label { color: var(--cafe-text-muted); }
+.cafe-neko__clothing-title {
+  grid-column: 1 / -1;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--cafe-text-muted);
+  margin-top: 4px;
+  padding-top: 6px;
+  border-top: 1px solid var(--cafe-divider);
+}
+
+/* ═══════════════════ Theme Picker ═══════════════════ */
+.cafe-theme-picker {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  padding: 8px 14px;
+  border-top: 1px solid var(--cafe-divider);
+}
+.cafe-theme-picker__label {
+  font-size: 10px;
+  color: var(--cafe-text-muted);
+  font-weight: 500;
+  margin-right: auto;
+  letter-spacing: 0.3px;
+}
+.cafe-theme-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0;
+  position: relative;
+}
+.cafe-theme-dot:hover { transform: scale(1.15); }
+.cafe-theme-dot--active {
+  border-color: var(--cafe-text);
+  box-shadow: 0 0 0 2px var(--cafe-bg), 0 0 0 3.5px var(--cafe-text);
+}
+.cafe-theme-dot[data-t="vanilla-cloud"] { background: linear-gradient(135deg, #FFF8F0, #E8879B); }
+.cafe-theme-dot[data-t="mocha-meow"] { background: linear-gradient(135deg, #2A1810, #FBB3C1); }
+.cafe-theme-dot[data-t="sakura-night"] { background: linear-gradient(135deg, #1C1528, #F2A6C5); }
+.cafe-theme-dot[data-t="matcha-latte"] { background: linear-gradient(135deg, #162320, #A8D8B9); }
+.cafe-theme-dot[data-t="strawberry-milk"] { background: linear-gradient(135deg, #FFF5F7, #E45B7A); }
+
+/* ═══════════════════ Empty State ═══════════════════ */
+.cafe-empty {
+  text-align: center;
+  padding: 16px 8px;
+  font-size: 12px;
+  color: var(--cafe-text-muted);
+  font-style: italic;
+}
+
+/* ═══════════════════ Animations ═══════════════════ */
+.cafe-fade-enter-active,
+.cafe-fade-leave-active { transition: opacity 0.18s ease; }
+.cafe-fade-enter-from,
+.cafe-fade-leave-to { opacity: 0; }
+
+@keyframes cafe-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+@keyframes cafe-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}

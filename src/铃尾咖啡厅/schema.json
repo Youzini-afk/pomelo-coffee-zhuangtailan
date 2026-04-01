@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "全局状态": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "天数": {
+          "default": 1,
+          "type": "number"
+        },
+        "资金": {
+          "default": 2000,
+          "type": "number"
+        },
+        "声望": {
+          "default": 10,
+          "type": "number"
+        },
+        "店铺等级": {
+          "default": 1,
+          "type": "number"
+        },
+        "每日维护费": {
+          "default": 1500,
+          "type": "number"
+        },
+        "NTR模式": {
+          "default": "未选择",
+          "type": "string",
+          "enum": [
+            "开启",
+            "关闭",
+            "未选择"
+          ]
+        }
+      }
+    },
+    "昨日经营数据": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "统计天数": {
+          "type": "number"
+        },
+        "普通客数量": {
+          "type": "number"
+        },
+        "特殊客数量": {
+          "type": "number"
+        },
+        "净收益": {
+          "type": "number"
+        }
+      }
+    },
+    "店长状态": {
+      "default": {},
+      "type": "object",
+      "properties": {
+        "形态": {
+          "default": "未选择",
+          "type": "string",
+          "enum": [
+            "人类男",
+            "人类女",
+            "女猫娘",
+            "未选择"
+          ]
+        },
+        "行动力": {
+          "default": 2,
+          "type": "number"
+        },
+        "招募失败累计": {
+          "type": "number"
+        }
+      }
+    },
+    "猫娘列表": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "default": {},
+        "type": "object",
+        "properties": {
+          "精力值": {
+            "default": 100,
+            "type": "number"
+          },
+          "服从度": {
+            "type": "number"
+          },
+          "排班状态": {
+            "default": "工作",
+            "type": "string",
+            "enum": [
+              "工作",
+              "休息"
+            ]
+          },
+          "接待资格": {
+            "default": "仅普通客",
+            "type": "string",
+            "enum": [
+              "仅普通客",
+              "可接特殊客"
+            ]
+          },
+          "当前穿着": {
+            "default": {},
+            "type": "object",
+            "properties": {
+              "服饰": {
+                "default": "无",
+                "type": "string"
+              },
+              "内衣": {
+                "default": "无",
+                "type": "string"
+              },
+              "内裤": {
+                "default": "无",
+                "type": "string"
+              },
+              "袜子": {
+                "default": "无",
+                "type": "string"
+              },
+              "鞋子": {
+                "default": "无",
+                "type": "string"
+              },
+              "配饰": {
+                "default": "无",
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

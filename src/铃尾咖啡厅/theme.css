@@ -1,0 +1,200 @@
+/* ═══════════════════════════════════════════════════════════════
+   铃尾咖啡厅 — 5 套主题 CSS 变量
+   默认: Vanilla Cloud (亮色)
+   可切换: Mocha Meow / Sakura Night / Matcha Latte / Strawberry Milk
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Vanilla Cloud ☁️ (默认·亮色) ─────────────────────────── */
+.cafe-root,
+.cafe-root[data-theme="vanilla-cloud"] {
+  --cafe-bg: #FFF8F0;
+  --cafe-bg-card: #FFFFFF;
+  --cafe-bg-card-alt: #FFF2E8;
+  --cafe-bg-glass: rgba(255, 255, 255, 0.72);
+  --cafe-bg-glass-border: rgba(200, 172, 144, 0.18);
+  --cafe-shadow: 0 2px 16px rgba(180, 140, 100, 0.08);
+  --cafe-shadow-lg: 0 8px 32px rgba(180, 140, 100, 0.12);
+
+  --cafe-primary: #E8879B;
+  --cafe-primary-soft: rgba(232, 135, 155, 0.12);
+  --cafe-secondary: #C4A882;
+  --cafe-tertiary: #B8A9D4;
+  --cafe-accent: #D4A95A;
+  --cafe-danger: #E45B7A;
+  --cafe-success: #6BAF7A;
+
+  --cafe-text: #3D2B1F;
+  --cafe-text-secondary: #8B7265;
+  --cafe-text-muted: #B8A89E;
+  --cafe-text-inverse: #FFFFFF;
+
+  --cafe-border: rgba(180, 140, 100, 0.15);
+  --cafe-border-active: rgba(232, 135, 155, 0.4);
+  --cafe-divider: rgba(180, 140, 100, 0.1);
+
+  --cafe-progress-bg: rgba(180, 140, 100, 0.12);
+  --cafe-progress-glow: rgba(232, 135, 155, 0.3);
+  --cafe-tab-active-bg: var(--cafe-primary);
+  --cafe-tab-inactive-bg: transparent;
+  --cafe-tab-active-text: #FFFFFF;
+  --cafe-tab-inactive-text: var(--cafe-text-secondary);
+
+  --cafe-fab-bg: linear-gradient(135deg, #E8879B, #D4759A);
+  --cafe-fab-shadow: 0 4px 20px rgba(232, 135, 155, 0.35);
+
+  --cafe-radius: 16px;
+  --cafe-radius-sm: 10px;
+  --cafe-radius-full: 9999px;
+}
+
+/* ── Mocha Meow 🐾 (暗色·深棕) ─────────────────────────── */
+.cafe-root[data-theme="mocha-meow"] {
+  --cafe-bg: #1F0F09;
+  --cafe-bg-card: #2A1810;
+  --cafe-bg-card-alt: #352018;
+  --cafe-bg-glass: rgba(42, 24, 16, 0.82);
+  --cafe-bg-glass-border: rgba(251, 179, 193, 0.1);
+  --cafe-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+  --cafe-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  --cafe-primary: #FBB3C1;
+  --cafe-primary-soft: rgba(251, 179, 193, 0.12);
+  --cafe-secondary: #D2C4B2;
+  --cafe-tertiary: #F0BD8B;
+  --cafe-accent: #F0BD8B;
+  --cafe-danger: #FF6B8A;
+  --cafe-success: #8BD4A0;
+
+  --cafe-text: #F5E6D8;
+  --cafe-text-secondary: #B8A08E;
+  --cafe-text-muted: #7A6558;
+  --cafe-text-inverse: #1F0F09;
+
+  --cafe-border: rgba(251, 179, 193, 0.1);
+  --cafe-border-active: rgba(251, 179, 193, 0.3);
+  --cafe-divider: rgba(251, 179, 193, 0.06);
+
+  --cafe-progress-bg: rgba(251, 179, 193, 0.1);
+  --cafe-progress-glow: rgba(251, 179, 193, 0.25);
+  --cafe-tab-active-bg: rgba(251, 179, 193, 0.15);
+  --cafe-tab-inactive-bg: transparent;
+  --cafe-tab-active-text: #FBB3C1;
+  --cafe-tab-inactive-text: var(--cafe-text-secondary);
+
+  --cafe-fab-bg: linear-gradient(135deg, #FBB3C1, #D4759A);
+  --cafe-fab-shadow: 0 4px 20px rgba(251, 179, 193, 0.3);
+}
+
+/* ── Sakura Night 🌸 (暗色·暗紫) ─────────────────────────── */
+.cafe-root[data-theme="sakura-night"] {
+  --cafe-bg: #1C1528;
+  --cafe-bg-card: #241E32;
+  --cafe-bg-card-alt: #2D2640;
+  --cafe-bg-glass: rgba(36, 30, 50, 0.82);
+  --cafe-bg-glass-border: rgba(242, 166, 197, 0.1);
+  --cafe-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+  --cafe-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  --cafe-primary: #F2A6C5;
+  --cafe-primary-soft: rgba(242, 166, 197, 0.12);
+  --cafe-secondary: #C9B8E8;
+  --cafe-tertiary: #F0BD8B;
+  --cafe-accent: #F0BD8B;
+  --cafe-danger: #FF6B9D;
+  --cafe-success: #A8D8B9;
+
+  --cafe-text: #F0E6F0;
+  --cafe-text-secondary: #A898B8;
+  --cafe-text-muted: #6E5E82;
+  --cafe-text-inverse: #1C1528;
+
+  --cafe-border: rgba(242, 166, 197, 0.1);
+  --cafe-border-active: rgba(242, 166, 197, 0.3);
+  --cafe-divider: rgba(201, 184, 232, 0.08);
+
+  --cafe-progress-bg: rgba(242, 166, 197, 0.1);
+  --cafe-progress-glow: rgba(242, 166, 197, 0.3);
+  --cafe-tab-active-bg: rgba(242, 166, 197, 0.15);
+  --cafe-tab-inactive-bg: transparent;
+  --cafe-tab-active-text: #F2A6C5;
+  --cafe-tab-inactive-text: var(--cafe-text-secondary);
+
+  --cafe-fab-bg: linear-gradient(135deg, #F2A6C5, #C9B8E8);
+  --cafe-fab-shadow: 0 4px 20px rgba(242, 166, 197, 0.3);
+}
+
+/* ── Matcha Latte 🍵 (暗色·暗绿) ─────────────────────────── */
+.cafe-root[data-theme="matcha-latte"] {
+  --cafe-bg: #0F1A18;
+  --cafe-bg-card: #162320;
+  --cafe-bg-card-alt: #1E2E2A;
+  --cafe-bg-glass: rgba(22, 35, 32, 0.82);
+  --cafe-bg-glass-border: rgba(168, 216, 185, 0.1);
+  --cafe-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+  --cafe-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  --cafe-primary: #A8D8B9;
+  --cafe-primary-soft: rgba(168, 216, 185, 0.12);
+  --cafe-secondary: #F5E6D3;
+  --cafe-tertiary: #FFB7C5;
+  --cafe-accent: #F5E6D3;
+  --cafe-danger: #FFB7C5;
+  --cafe-success: #A8D8B9;
+
+  --cafe-text: #E8F0EA;
+  --cafe-text-secondary: #8BAA96;
+  --cafe-text-muted: #5A7868;
+  --cafe-text-inverse: #0F1A18;
+
+  --cafe-border: rgba(168, 216, 185, 0.1);
+  --cafe-border-active: rgba(168, 216, 185, 0.3);
+  --cafe-divider: rgba(168, 216, 185, 0.06);
+
+  --cafe-progress-bg: rgba(168, 216, 185, 0.1);
+  --cafe-progress-glow: rgba(168, 216, 185, 0.3);
+  --cafe-tab-active-bg: rgba(168, 216, 185, 0.15);
+  --cafe-tab-inactive-bg: transparent;
+  --cafe-tab-active-text: #A8D8B9;
+  --cafe-tab-inactive-text: var(--cafe-text-secondary);
+
+  --cafe-fab-bg: linear-gradient(135deg, #A8D8B9, #7BC4A0);
+  --cafe-fab-shadow: 0 4px 20px rgba(168, 216, 185, 0.3);
+}
+
+/* ── Strawberry Milk 🍓 (亮色·粉白) ─────────────────────── */
+.cafe-root[data-theme="strawberry-milk"] {
+  --cafe-bg: #FFF5F7;
+  --cafe-bg-card: #FFFFFF;
+  --cafe-bg-card-alt: #FFF0F3;
+  --cafe-bg-glass: rgba(255, 255, 255, 0.72);
+  --cafe-bg-glass-border: rgba(228, 91, 122, 0.12);
+  --cafe-shadow: 0 2px 16px rgba(228, 91, 122, 0.06);
+  --cafe-shadow-lg: 0 8px 32px rgba(228, 91, 122, 0.1);
+
+  --cafe-primary: #E45B7A;
+  --cafe-primary-soft: rgba(228, 91, 122, 0.1);
+  --cafe-secondary: #D4A95A;
+  --cafe-tertiary: #9DD5C0;
+  --cafe-accent: #D4A95A;
+  --cafe-danger: #E45B7A;
+  --cafe-success: #9DD5C0;
+
+  --cafe-text: #4A2635;
+  --cafe-text-secondary: #8E5E6E;
+  --cafe-text-muted: #C4A0AE;
+  --cafe-text-inverse: #FFFFFF;
+
+  --cafe-border: rgba(228, 91, 122, 0.1);
+  --cafe-border-active: rgba(228, 91, 122, 0.3);
+  --cafe-divider: rgba(228, 91, 122, 0.06);
+
+  --cafe-progress-bg: rgba(228, 91, 122, 0.1);
+  --cafe-progress-glow: rgba(228, 91, 122, 0.25);
+  --cafe-tab-active-bg: var(--cafe-primary);
+  --cafe-tab-inactive-bg: transparent;
+  --cafe-tab-active-text: #FFFFFF;
+  --cafe-tab-inactive-text: var(--cafe-text-secondary);
+
+  --cafe-fab-bg: linear-gradient(135deg, #E45B7A, #FF8BA7);
+  --cafe-fab-shadow: 0 4px 20px rgba(228, 91, 122, 0.35);
+}
